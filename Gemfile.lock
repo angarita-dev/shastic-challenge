@@ -3,6 +3,7 @@ GEM
   specs:
     database_cleaner (1.8.5)
     diff-lcs (1.4.4)
+    docile (1.3.2)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
       rspec-expectations (~> 3.10.0)
@@ -16,6 +17,10 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
     rspec-support (3.10.0)
+    simplecov (0.19.1)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+    simplecov-html (0.12.3)
 
 PLATFORMS
   ruby
@@ -23,6 +28,7 @@ PLATFORMS
 DEPENDENCIES
   database_cleaner
   rspec
+  simplecov
 
 BUNDLED WITH
    2.1.4
