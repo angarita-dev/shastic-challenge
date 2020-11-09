@@ -98,6 +98,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord
   database_cleaner
   mysql2
   rake
