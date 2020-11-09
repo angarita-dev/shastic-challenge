@@ -1,0 +1,15 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  host: mysql
+  port: 3306
+  username: root
+  password: pass
+
+development:
+  <<: *default
+  database: shastic_challenge_development
+
+test: &test
+  <<: *default
+  database: shastic_challenge_test
