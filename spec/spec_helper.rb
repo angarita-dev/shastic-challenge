@@ -1,5 +1,5 @@
 require 'simplecov'
-require 'database_cleaner/active_record'
+require 'database_cleaner'
 
 SimpleCov.start
 
