@@ -134,3 +134,9 @@ docker-compose exec shastic_challenge bundle exec -r 'app.rb' -e 'call'
 ```console
 docker-compose exec shastic_challenge bundle exec rspec
 ```
+
+### Run linter
+
+```console
+docker-compose exec shastic_challenge bundle exec rubocop
+```
