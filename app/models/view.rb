@@ -1,19 +1,21 @@
-require_relative './application_record'
+# frozen_string_literal: true
 
-class View < ApplicationRecord 
+require_relative 'application_record'
+
+# Stores visit statistics, related with pageviews
+class View < ApplicationRecord
   # Relationships
   has_many :pageviews
 
   # Validations
   validates :evid,
-    presence: true,
-    format: {
-      with: /\A[A-z0-9]{8}-[A-z0-9]{4}-[A-z0-9]{4}-[A-z0-9]{4}-[A-z0-9]{12}\z/
-    }
-  
+            presence: true,
+            format: {
+              with: /\A[A-z0-9]{8}-[A-z0-9]{4}-[A-z0-9]{4}-[A-z0-9]{4}-[A-z0-9]{12}\z/
+            }
+
   # Callbacks
   before_validation do
-    self.evid.delete_prefix! 'evid_' if attribute_present?('evid')
+    evid.delete_prefix! 'evid_' if attribute_present?('evid')
   end
 end
-
