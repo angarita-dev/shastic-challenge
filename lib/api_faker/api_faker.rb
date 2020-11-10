@@ -13,7 +13,7 @@ class ApiFaker
       :get,
       'www.shastic-challenge.fake-data.com'
     ).to_return(
-      body: File.read(File.expand_path('../public/sample.json', __dir__))
+      body: File.read(File.expand_path('public/sample.json', __dir__))
     )
     true
   end
