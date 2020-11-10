@@ -2,10 +2,33 @@
 
 This is a solution to the [shastic ror coding challenge](https://bitbucket.org/shastic/coding-challenges/src/master/application_challenge/README.md)
 
+## Navigation
+- [Overview](#overview)
+- [Architecture](#architecture)
+    - [Overview](#overview-1)
+    - [Filestructure](#filestructure)
+- [Gems](#gems)
+- [How to run](#how-to-run)
+    - [Setup](#setup)
+    - [Run application](#run-application)
+    - [Run tests](#run-tests)
+
 ## Overview
 Simple Ruby project that connects to a fake api, collects statistics of website visits and stores them into a MySQL database
 
 ## Architecture
+
+### Overview
+- `app/` Main application folder
+    - `models/` Contains Models powered by `ActiveRecord`, for mapping them to the database
+    - `services/` Calls external api
+- `db/` Database configuration
+    - `migrate/` Database migrations
+- `docker` Docker container config files
+- `lib/` Classes external to core app functionality
+- `spec/` Application testing
+
+### Filestructure
 ```
 ├── app
 │   ├── models
@@ -73,41 +96,41 @@ The application is delivered using `docker-compose`
 Generate `mysql` and `shastic_challenge` containers:
 
 ```console
-$ docker-compose build
+docker-compose build
 ```
 
 Create and start containers in the background:
 
 ```console
-$ docker-compose up -d
+docker-compose up -d
 ```
 
 Install gems:
 
 ```console
-$ docker-compose exec shastic_challenge bundle
+docker-compose exec shastic_challenge bundle
 ```
 
 Create db tables:
 
 ```console
-$ docker-compose exec shastic_challenge bundle exec rake db:create
+docker-compose exec shastic_challenge bundle exec rake db:create
 ```
 
 Run db pending migrations:
 
 ```console
-$ docker-compose exec shastic_challenge bundle exec rake db:migrate
+docker-compose exec shastic_challenge bundle exec rake db:migrate
 ```
 
 ### Run application
 
 ```console
-$ docker-compose exec shastic_challenge bundle exec -r 'app.rb' -e 'call'
+docker-compose exec shastic_challenge bundle exec -r 'app.rb' -e 'call'
 ```
 
 ### Run tests
 
 ```console
-$ docker-compose exec shastic_challenge bundle exec rspec
+docker-compose exec shastic_challenge bundle exec rspec
 ```
