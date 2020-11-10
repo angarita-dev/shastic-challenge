@@ -5,7 +5,7 @@ source "https://rubygems.org"
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gem 'rspec'
-gem 'database_cleaner'
+gem 'database_cleaner-active_record'
 gem 'simplecov'
 gem 'webmock'
 gem 'mysql2'
