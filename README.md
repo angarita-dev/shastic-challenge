@@ -73,41 +73,41 @@ The application is delivered using `docker-compose`
 Generate `mysql` and `shastic_challenge` containers:
 
 ```console
-$ docker-compose build
+docker-compose build
 ```
 
 Create and start containers in the background:
 
 ```console
-$ docker-compose up -d
+docker-compose up -d
 ```
 
 Install gems:
 
 ```console
-$ docker-compose exec shastic_challenge bundle
+docker-compose exec shastic_challenge bundle
 ```
 
 Create db tables:
 
 ```console
-$ docker-compose exec shastic_challenge bundle exec rake db:create
+docker-compose exec shastic_challenge bundle exec rake db:create
 ```
 
 Run db pending migrations:
 
 ```console
-$ docker-compose exec shastic_challenge bundle exec rake db:migrate
+docker-compose exec shastic_challenge bundle exec rake db:migrate
 ```
 
 ### Run application
 
 ```console
-$ docker-compose exec shastic_challenge bundle exec -r 'app.rb' -e 'call'
+docker-compose exec shastic_challenge bundle exec -r 'app.rb' -e 'call'
 ```
 
 ### Run tests
 
 ```console
-$ docker-compose exec shastic_challenge bundle exec rspec
+docker-compose exec shastic_challenge bundle exec rspec
 ```
