@@ -12,6 +12,7 @@ This is a solution to the [shastic ror coding challenge](https://bitbucket.org/s
     - [Setup](#setup)
     - [Run application](#run-application)
     - [Run tests](#run-tests)
+    - [Run linter](#run-linter)
 
 ## Overview
 Simple Ruby project that connects to a fake api, collects statistics of website visits and stores them into a MySQL database
