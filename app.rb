@@ -6,7 +6,7 @@ loader = Zeitwerk::Loader.new
 loader.push_dir('./app/')
 loader.push_dir('./app/models')
 loader.push_dir('./app/services')
-loader.push_dir("#{__dir__}/lib/api_faker")
+loader.push_dir('./lib/api_faker')
 loader.setup
 
 def setup
