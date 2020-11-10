@@ -2,8 +2,8 @@ class WebStatsApiService
   require 'json'
   require 'httparty'
 
-  def initialize               
-    @url = 'http://www.shastic-challenge.fake-data.com'
+  def initialize url = 'http://www.shastic-challenge.fake-data.com'
+    @url = url
   end
 
   def statistics               
