@@ -3,8 +3,16 @@
 require 'simplecov'
 require 'database_cleaner/active_record'
 require './lib/api_faker/api_faker'
+require 'zeitwerk'
 
 SimpleCov.start
+
+loader = Zeitwerk::Loader.new
+loader.push_dir('./app/')
+loader.push_dir('./app/models')
+loader.push_dir('./app/services')
+loader.push_dir('./lib/api_faker')
+loader.setup
 
 DatabaseCleaner.strategy = :truncation
 

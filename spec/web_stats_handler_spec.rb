@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require './app/web_stats_handler'
-require './app/services/web_stats_api_service'
-
 RSpec.describe WebStatsHandler do
   let!(:instance) { WebStatsHandler.new }
 
