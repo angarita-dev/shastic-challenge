@@ -1,2 +1,5 @@
 # Ignoring temporal vim files
 *.swp
+
+# Ignoring simplecov output
+coverage/
