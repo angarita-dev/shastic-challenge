@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 require './app/web_stats_handler'
 require './app/services/web_stats_api_service'
 
 RSpec.describe WebStatsHandler do
   let!(:instance) { WebStatsHandler.new }
 
-  describe '#get_stats' do
+  describe '#stats' do
     it 'returns WebStatsApiService::statistics' do
-      expect(instance.get_stats).to eq(WebStatsApiService.new.statistics)
+      expect(instance.stats).to eq(WebStatsApiService.new.statistics)
     end
   end
 

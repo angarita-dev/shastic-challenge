@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'zeitwerk'
 
 loader = Zeitwerk::Loader.new
@@ -18,4 +20,3 @@ def call
   web_stats_handler.parse_stats
   web_stats_handler.save_stats
 end
-
