@@ -1,0 +1,9 @@
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - 'spec/**/*'

@@ -1,5 +1,4 @@
-require './app/models/pageview.rb'
-require './app/models/view.rb'
+# frozen_string_literal: true
 
 RSpec.describe View do
   let!(:valid_view) { View.create(evid: '966634dc-0bf6-1ff7-f4b6-08000c95c670') }
@@ -25,7 +24,6 @@ RSpec.describe View do
   end
 
   describe 'relationship with pageview' do
-
     it 'can access pageview model' do
       parent_view = valid_view
       pageview = parent_view.pageviews.create

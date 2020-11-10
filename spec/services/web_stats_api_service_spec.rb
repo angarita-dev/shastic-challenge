@@ -1,4 +1,4 @@
-require './app/services/web_stats_api_service'
+# frozen_string_literal: true
 
 RSpec.describe WebStatsApiService do
   let!(:web_service) { WebStatsApiService.new }
