@@ -1,4 +1,5 @@
 require './app/web_stats_handler'
+require './app/services/web_stats_api_service'
 
 RSpec.describe WebStatsHandler do
   let!(:instance) { WebStatsHandler.new }
@@ -44,13 +45,13 @@ RSpec.describe WebStatsHandler do
 
   describe '#save_stats' do
     it 'creates records to db' do
-      expect(Schema.count).to eq(0)
+      expect(Pageview.count).to eq(0)
       expect(View.count).to eq(0)
 
       instance.parse_stats
       instance.save_stats
 
-      expect(Schema.count).to_not eq(0)
+      expect(Pageview.count).to_not eq(0)
       expect(View.count).to_not eq(0)
     end
   end
